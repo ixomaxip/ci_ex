@@ -11,7 +11,7 @@ class FlaskAppTests(unittest.TestCase):
 
     def test_get_hello(self):
         r = self.app.get('/')
-        self.assertEqual(r.data, b'Hello O!')
+        self.assertEqual(r.data, b'Hell O!')
 
     def test_post_hello(self):
         r = self.app.post('/')
