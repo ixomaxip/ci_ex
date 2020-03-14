@@ -29,6 +29,13 @@ def api():
     }
     :return:
     """
+    if request.method == 'GET':
+        return jsonify({'status': 'test'})
+    elif request.method == 'POST':
+        if validate_post_data(request.json):
+            return jsonify({'status': 'OK'})
+        else:
+            return jsonify({'status': 'bad input'}), 400
 
 def main():
     app.run(host='0.0.0.0', port=8080)
